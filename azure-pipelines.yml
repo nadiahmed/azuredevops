@@ -6,7 +6,7 @@ pool:
 
 steps:
 - script: |
-    ls -larth
+    dir 
     cd terraform
     terraform init
   displayName: 'Terraform init'
