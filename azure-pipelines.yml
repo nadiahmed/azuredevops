@@ -1,0 +1,12 @@
+
+trigger:
+- main
+
+pool:
+  vmImage: ubuntu-latest
+
+steps:
+- script: |
+    # Install Terraform
+    sudo apt-get update && sudo apt-get install terraform
+  displayName: 'Terraform init'
