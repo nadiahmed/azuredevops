@@ -6,6 +6,5 @@ pool:
 
 steps:
 - script: |
-    # Install Terraform
-    echo 'hi'
+    terraform init
   displayName: 'Terraform init'
