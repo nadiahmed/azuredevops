@@ -8,5 +8,7 @@ steps:
 - script: |
     dir 
     cd terraform
-    terraform init
+    dir
+    echo %PATH%
+    where terraform
   displayName: 'Terraform init'
