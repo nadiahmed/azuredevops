@@ -8,5 +8,5 @@ pool:
 steps:
 - script: |
     # Install Terraform
-    sudo apt-get update && sudo apt-get install terraform
+    echo 'hi'
   displayName: 'Terraform init'
