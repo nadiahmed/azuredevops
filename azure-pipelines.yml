@@ -10,5 +10,28 @@ steps:
     cd terraform
     dir
     echo %PATH%
-    C:\Users\91720\Downloads\terraform_1.5.7_windows_amd64\terraform.exe -version
+    terraform init
   displayName: 'Terraform init'
+  ## C:\Users\91720\Downloads\terraform_1.5.7_windows_amd64\terraform.exe -version
+- task: CmdLine@2
+  inputs:
+    script: 'dir'
+
+# - task: Gradle@3
+#   inputs:
+#     gradleWrapperFile: 'gradlew'
+#     tasks: 'build'
+#     publishJUnitResults: false
+#     javaHomeOption: 'JDKVersion'
+#     sonarQubeRunAnalysis: false
+#     spotBugsAnalysis: false
+
+
+# - task: Docker@2
+#   inputs:
+#     containerRegistry: 'acrconnection'
+#     command: 'buildAndPush'
+#     Dockerfile: '**/Dockerfile'
+#   displayName: 'Docker build and push to ACR'
+  
+
