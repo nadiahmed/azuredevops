@@ -25,7 +25,11 @@ steps:
 #     javaHomeOption: 'JDKVersion'
 #     sonarQubeRunAnalysis: false
 #     spotBugsAnalysis: false
-
+- task: PublishBuildArtifacts@1
+  inputs:
+    PathtoPublish: '$(Build.ArtifactStagingDirectory)'
+    ArtifactName: 'drop'
+  condition: succeededOrFailed()
 
 # - task: Docker@2
 #   inputs:
