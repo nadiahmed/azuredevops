@@ -11,20 +11,22 @@ steps:
     dir
     echo %PATH%
     terraform init
+    terraform plan
+    terraform apply
   displayName: 'Terraform init'
   ## C:\Users\91720\Downloads\terraform_1.5.7_windows_amd64\terraform.exe -version
 - task: CmdLine@2
   inputs:
     script: 'dir'
 
-# - task: Gradle@3
-#   inputs:
-#     gradleWrapperFile: 'gradlew'
-#     tasks: 'build'
-#     publishJUnitResults: false
-#     javaHomeOption: 'JDKVersion'
-#     sonarQubeRunAnalysis: false
-#     spotBugsAnalysis: false
+- task: Gradle@3
+  inputs:
+    gradleWrapperFile: 'gradlew'
+    tasks: 'build'
+    publishJUnitResults: false
+    javaHomeOption: 'JDKVersion'
+    sonarQubeRunAnalysis: false
+    spotBugsAnalysis: false
 
 - task: CopyFiles@2
   displayName: 'Copy Files to: $(build.artifactstagingdirectory)'
@@ -39,11 +41,11 @@ steps:
     ArtifactName: 'drop'
   condition: succeededOrFailed()
 
-# - task: Docker@2
-#   inputs:
-#     containerRegistry: 'acrconnection'
-#     command: 'buildAndPush'
-#     Dockerfile: '**/Dockerfile'
-#   displayName: 'Docker build and push to ACR'
+- task: Docker@2
+  inputs:
+    containerRegistry: 'acrconnection'
+    command: 'buildAndPush'
+    Dockerfile: '**/Dockerfile'
+  displayName: 'Docker build and push to ACR'
   
 
