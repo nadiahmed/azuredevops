@@ -1,0 +1,14 @@
+trigger:
+- main
+
+pool:
+  name: default
+
+steps:
+- script: |
+    dir 
+    cd terraform
+    dir
+    echo %PATH%
+    C:\Users\91720\Downloads\terraform_1.5.7_windows_amd64\terraform.exe -version
+  displayName: 'Terraform init'
