@@ -20,7 +20,7 @@ steps:
 
 - task: Gradle@3
   inputs:
-    gradleWrapperFile: 'app/gradlew'
+    gradleWrapperFile: './app/gradlew'
     tasks: 'build'
     publishJUnitResults: false
     javaHomeOption: 'JDKVersion'
