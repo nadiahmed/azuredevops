@@ -1,0 +1,19 @@
+<!DOCTYPE HTML>
+<html>
+<head> 
+    <title>Simple web service</title> 
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+</head>
+<body>
+    <script>
+        var req = new XMLHttpRequest();
+        req.responseType = 'json';
+        req.open('GET', '/value/0', true);
+        req.onload  = function() {
+            var jsonResponse = req.response;
+            document.body.innerHTML += jsonResponse['value']
+        };
+        req.send(null);
+    </script>
+</body>
+</html>
