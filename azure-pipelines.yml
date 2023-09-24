@@ -46,6 +46,5 @@ steps:
     containerRegistry: 'acrconnection'
     command: 'buildAndPush'
     Dockerfile: '**/Dockerfile'
+    buildContext: '**/app'
   displayName: 'Docker build and push to ACR'
-  
-
