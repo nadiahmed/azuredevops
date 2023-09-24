@@ -11,8 +11,8 @@ steps:
     dir
     echo %PATH%
     terraform init
-    terraform plan -auto-approve
-    terraform apply -auto-approve
+    :: terraform plan -auto-approve
+    :: terraform apply -auto-approve
   displayName: 'Terraform init and apply'
 - task: CmdLine@2
   inputs:
