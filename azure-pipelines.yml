@@ -43,7 +43,7 @@ steps:
 
 - task: Docker@2
   inputs:
-    containerRegistry: 'acrconnection'
+    containerRegistry: 'acrconname'
     command: 'buildAndPush'
     Dockerfile: '**/Dockerfile'
     buildContext: '**/app'
