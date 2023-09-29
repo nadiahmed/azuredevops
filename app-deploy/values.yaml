@@ -1,0 +1,13 @@
+mysql:
+  image: bitnami/mysql:8.0.28
+  rootPassword: admin
+  database: mysqldb
+  user: admin
+  password: password
+
+# StatefulSet configuration
+statefulset:
+  replicas: 1
+
+
+ 

@@ -1,0 +1,7 @@
+apiVersion: v2
+name: azapp
+description: POC for azuredevops
+
+type: application
+version: "1.0.0"
+appVersion: "" 
