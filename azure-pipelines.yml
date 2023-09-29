@@ -11,8 +11,8 @@ steps:
     dir
     echo %PATH%
     terraform init
-    terraform plan -auto-approve
-    terraform apply -auto-approve
+    :: terraform plan -auto-approve
+    :: terraform apply -auto-approve
   displayName: 'Terraform init and apply'
 - task: CmdLine@2
   inputs:
@@ -20,7 +20,8 @@ steps:
 
 - task: Gradle@3
   inputs:
-    gradleWrapperFile: 'gradlew'
+    gradleWrapperFile: 'app/gradlew'
+    workingDirectory: 'app'
     tasks: 'build'
     publishJUnitResults: false
     javaHomeOption: 'JDKVersion'
@@ -42,9 +43,8 @@ steps:
 
 - task: Docker@2
   inputs:
-    containerRegistry: 'acrconnection'
+    containerRegistry: 'acrconname'
     command: 'buildAndPush'
     Dockerfile: '**/Dockerfile'
+    buildContext: '**/app'
   displayName: 'Docker build and push to ACR'
-  
-
