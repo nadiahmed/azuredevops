@@ -23,14 +23,14 @@ spec:
               name: mysql
           env:
             - name: MYSQL_ROOT_PASSWORD
-              value: {{ .Values.rootPassword }}
+              value: "admin"
               secure: true
             - name: MYSQL_DATABASE
-              value: {{ .Values.database }}
+              value: "mysqldb"
             - name: MYSQL_USER
-              value:  {{ .Values.user }}
+              value:  "admin"
             - name: MYSQL_PASSWORD
-              value:  {{ .Values.password }}
+              value:  "password"
               secure: true
           volumeMounts:
             - name: data

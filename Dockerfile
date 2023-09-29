@@ -6,8 +6,9 @@ RUN groupadd -g 999 appuser \
 	&& chown -R appuser:appuser /app
 
 WORKDIR /azuredevopsapp
-COPY . /azuredevopsapp
+COPY app/build/libs/azuredevopsapp-0.0.1-SNAPSHOT.jar /azuredevopsapp
 
 
-ENTRYPOINT exec java $JAVA_OPTS -jar /azuredevopsapp/build/libs/azuredevopsapp-0.0.1-SNAPSHOT.jar
+ENTRYPOINT exec java $JAVA_OPTS -jar azuredevopsapp-0.0.1-SNAPSHOT.jar
+
 
